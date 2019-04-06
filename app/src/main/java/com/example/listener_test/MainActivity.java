@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
          });
 
 
-         john.goHome(); // 請求john 回家
+         john.goHome(); // 請求john 回家，這部應該是交由thread 或是 用手點擊時來做，因為例子沒有觸發的機制，所以就直接做
     }
 
 
