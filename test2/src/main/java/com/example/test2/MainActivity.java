@@ -10,21 +10,21 @@ public class MainActivity extends AppCompatActivity {
     private Counter counter = new Counter();
     TextView textView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textview);
-        counter.printCount();
-        counter.setOnFinishLitiner(new Counter.OnFinishLitiner() {
+
+        counter.setOnFinishLitiner(new OnFinishLitiner() {
             @Override
             public void onFinish() {
                 Log.d(TAG, "Counter Finish!!");
                 textView.setText("Finish");
             }
         });
-
+        counter.printCount();
     }
+
 
 }

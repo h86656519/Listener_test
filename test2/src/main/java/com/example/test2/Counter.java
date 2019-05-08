@@ -6,9 +6,9 @@ public class Counter {
     private final static String TAG = Counter.class.getSimpleName();
     private OnFinishLitiner onFinishLitiner = null;
 
-    public interface OnFinishLitiner {
-        void onFinish();
-    }
+//    public interface OnFinishLitiner {
+//        void onFinish();
+//    }
 
     public Counter() {
     }
@@ -22,11 +22,13 @@ public class Counter {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        if (onFinishLitiner != null){
+            onFinishLitiner.onFinish();
+        }
     }
 
     public void setOnFinishLitiner(OnFinishLitiner litiner) {
         onFinishLitiner = litiner;
     }
-
-
 }
