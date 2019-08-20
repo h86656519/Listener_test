@@ -41,7 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.itemListener(position);
+                listener.itemListener(position); //用Listener 將 position 傳出去
                 holder.textView.setBackgroundColor(Color.BLUE);
             }
         });
