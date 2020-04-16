@@ -35,7 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final MyAdapter.ViewHolder holder, final int position) {
         String num = arrayList.get(position) +"";
-        holder.textView.setText(num);
+//        holder.textView.setText(num); 一班是寫在這，但也可以用listiner 回傳給acativity 讓 activity 來做控制
         holder.textView.setBackgroundColor(Color.WHITE);
 
         holder.textView.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             public void onClick(View v) {
                 listener.itemListener(position); //用Listener 將 position 傳出去
                 holder.textView.setBackgroundColor(Color.BLUE);
+                listener.viewListener(holder); //把holder 回傳給activity 做操作
             }
         });
     }

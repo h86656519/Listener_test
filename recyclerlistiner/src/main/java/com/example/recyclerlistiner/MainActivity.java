@@ -2,6 +2,8 @@ package com.example.recyclerlistiner;
 
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
             public void itemListener(int i) {
                 Toast.makeText(MainActivity.this, "item : " + i, Toast.LENGTH_SHORT).show();
             }
+
+            @Override
+            public void viewListener(MyAdapter.ViewHolder holder) {
+                //用回傳的 holder 做操作
+                TextView textView = holder.itemView.findViewById(R.id.textView);
+                textView.setText("抓到這個view 了");
+            }
+
+
         });
     }
 }
